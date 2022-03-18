@@ -285,7 +285,15 @@ window.addEventListener('DOMContentLoaded', function() {
         }, 4000); 
     }
 
-    // fetch('https://jsonplaceholder.typicode.com/posts', {
+    fetch('http://localhost:3000/menu')
+        .then(data => data.json())
+        .then(res => console.log(res));
+
+});
+
+
+
+// fetch('https://jsonplaceholder.typicode.com/posts', {
     //     method: 'POST',
     //     body: JSON.stringify({name: 'Albert', text: 'Todo enject'}),
     //     headers: {
@@ -294,4 +302,3 @@ window.addEventListener('DOMContentLoaded', function() {
     // })
     // .then(response => response.json())
     // .then(json => console.log(json));
-});
