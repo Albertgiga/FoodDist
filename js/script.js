@@ -1,7 +1,11 @@
 window.addEventListener('DOMContentLoaded', function() {
 
-    // Tabs
-    
+//                        _________    ____ _____
+//                       /_  __/   |  / __ ) ___/
+//                        / / / /| | / __  \__ \
+//                       / / / ___ |/ /_/ /__/ /
+//                      /_/ /_/  |_/_____/____/
+
 	let tabs = document.querySelectorAll('.tabheader__item'),
 		tabsContent = document.querySelectorAll('.tabcontent'),
 		tabsParent = document.querySelector('.tabheader__items');
@@ -38,8 +42,11 @@ window.addEventListener('DOMContentLoaded', function() {
             });
 		}
     });
-    
-    // Timer
+//                      ____________  _____________ 
+//                     /_  __/  _/  |/  / ____/ __ \
+//                      / /  / // /|_/ / __/ / /_/ /
+//                     / / _/ // /  / / /___/ _, _/
+//                    /_/ /___/_/  /_/_____/_/ |_|
 
     const deadline = '2022-04-04';
 
@@ -94,7 +101,11 @@ window.addEventListener('DOMContentLoaded', function() {
 
     setClock('.timer', deadline);
 
-    // Modal
+//                      __  _______  ____  ___    __ 
+//                     /  |/  / __ \/ __ \/   |  / /
+//                    / /|_/ / / / / / / / /| | / /
+//                   / /  / / /_/ / /_/ / ___ |/ /___
+//                  /_/  /_/\____/_____/_/  |_/_____/
 
     const modalTrigger = document.querySelectorAll('[data-modal]'),
           modal = document.querySelector('.modal');
@@ -192,21 +203,17 @@ window.addEventListener('DOMContentLoaded', function() {
         return await res.json();
     };
 
-    // getResource('http://localhost:3000/menu')
-    //     .then(data => {
-            // data.forEach(({img, altimg, title, descr, price}) => {
-            //     new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
-            // });
-    //     });
-
     axios.get('http://localhost:3000/menu')
         .then(data => {
             data.data.forEach(({img, altimg, title, descr, price}) => {
                 new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
             });
         });
-
-    // Forms
+//                       __________  ____  __  ________
+//                      / ____/ __ \/ __ \/  |/  / ___/
+//                     / /_  / / / / /_/ / /|_/ /\__ \
+//                    / __/ / /_/ / _, _/ /  / /___/ /
+//                   /_/    \____/_/ |_/_/  /_//____/
 
     const forms = document.querySelectorAll('form');
     const message = {
@@ -283,14 +290,11 @@ window.addEventListener('DOMContentLoaded', function() {
             closeModal();
         }, 4000); 
     }
-
-    //       Response to db.json/menu
-
-    // fetch('http://localhost:3000/menu')
-    //     .then(data => data.json())
-    //     .then(res => console.log(res));
-
-    // Slider
+//                      _____ __    ________  __________ 
+//                     / ___// /   /  _/ __ \/ ____/ __ \
+//                     \__ \/ /    / // / / / __/ / /_/ /
+//                    ___/ / /____/ // /_/ / /___/ _, _/
+//                   /____/_____/___/_____/_____/_/ |_|
 
     const slides = document.querySelectorAll('.offer__slide'),
           slider = document.querySelector('.offer__slider'),
@@ -366,8 +370,17 @@ window.addEventListener('DOMContentLoaded', function() {
         indicators.append(dot);
         dots.push(dot);
     }
-
-    // Dots for Slider
+//                  ____  ____  ___________    __________  ____ 
+//                 / __ \/ __ \/_  __/ ___/   / ____/ __ \/ __ \
+//                / / / / / / / / /  \__ \   / /_  / / / / /_/ /
+//               / /_/ / /_/ / / /  ___/ /  / __/ / /_/ / _, _/
+//              /_____/\____/ /_/  /____/  /_/    \____/_/ |_|
+                
+//                    _____ __    ________  __________
+//                   / ___// /   /  _/ __ \/ ____/ __ \
+//                   \__ \/ /    / // / / / __/ / /_/ /
+//                  ___/ / /____/ // /_/ / /___/ _, _/
+//                 /____/_____/___/_____/_____/_/ |_|
 
     function deleteNotDigits(str) {
         return +str.replace(/\D/g, '');
@@ -433,26 +446,11 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
-    // Sidepanel
-
-    const sidePanel = document.querySelector('.sidepanel'),
-          screenWidth = window.screen.width;
-
-    sidePanel.style.left = `${screenWidth - (screenWidth - 5)}px`;
-
-    // function showAdminModal(message) {
-        
-    // }
-
-    // sidePanel.addEventListener('click', () => {
-    //     showAdminModal('Admin modal');
-    // });  
-
-    // Realization admin panel
-
-    
-    // Calories Calc
+//      _________    __    ____  ____  _______________    _________    __    ______
+//     / ____/   |  / /   / __ \/ __ \/  _/ ____/ ___/   / ____/   |  / /   / ____/
+//    / /   / /| | / /   / / / / /_/ // // __/  \__ \   / /   / /| | / /   / /
+//   / /___/ ___ |/ /___/ /_/ / _, _// // /___ ___/ /  / /___/ ___ |/ /___/ /___
+//   \____/_/  |_/_____/\____/_/ |_/___/_____//____/   \____/_/  |_/_____/\____/
 
     const result = document.querySelector('.calculating__result span');
     
@@ -550,15 +548,12 @@ window.addEventListener('DOMContentLoaded', function() {
                     age = +input.value;
                     break;
             }
-
             calcTotal();
         });
     }
-
     getDynamicInformation('#height');
     getDynamicInformation('#weight');
     getDynamicInformation('#age');
-
 });
 
 
@@ -593,11 +588,35 @@ window.addEventListener('DOMContentLoaded', function() {
 //                      Response 
 
 // fetch('https://jsonplaceholder.typicode.com/posts', {
-    //     method: 'POST',
-    //     body: JSON.stringify({name: 'Albert', text: 'Todo enject'}),
-    //     headers: {
-    //         'Content-type': 'application/json'
-    //     }
-    // })
-    // .then(response => response.json())
-    // .then(json => console.log(json));
+//     method: 'POST',
+//     body: JSON.stringify({name: 'Albert', text: 'Todo enject'}),
+//     headers: {
+//         'Content-type': 'application/json'
+//     }
+// })
+// .then(response => response.json())
+// .then(json => console.log(json));
+
+
+//       Response to db.json/menu
+
+// fetch('http://localhost:3000/menu')
+//     .then(data => data.json())
+//     .then(res => console.log(res));
+
+// function showAdminModal(message) {
+    
+// }
+
+// sidePanel.addEventListener('click', () => {
+//     showAdminModal('Admin modal');
+// });  
+
+// Realization admin panel
+
+// Sidepanel
+
+// const sidePanel = document.querySelector('.sidepanel'),
+//       screenWidth = window.screen.width;
+
+// sidePanel.style.left = `${screenWidth - (screenWidth - 5)}px`;
